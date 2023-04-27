@@ -13,14 +13,16 @@ class AnimalTest {
 
         String noise = animal1.makeNoise();
 
-        assertEquals("Noise", noise);
+        assertEquals("noise", noise);
     }
 
     @Test
     void testGetAnimalName() {
         Animal animal1 = new Animal("Gigi", 12);
 
-        assertEquals("Gigi", animal1.getName());
+        String name = animal1.getName();
+
+        assertEquals("Gigi", name);
     }
 
     @Test
@@ -36,6 +38,18 @@ class AnimalTest {
     void testGetAnimalAge() {
         Animal animal1 = new Animal("Gigi", 12);
 
-        assertEquals(12, animal1.getAge());
+        int age = animal1.getAge();
+
+        assertEquals(12, age);
     }
+
+    @Test
+    void testSetAnimalAge() {
+        Animal animal1 = new Animal("Gigi", 12);
+
+        int age = animal1.setAge(11);
+
+        assertEquals(11, age);
+    }
+
 }

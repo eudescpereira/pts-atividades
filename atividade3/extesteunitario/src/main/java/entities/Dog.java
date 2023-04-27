@@ -15,8 +15,8 @@ public class Dog extends Animal {
         return breed;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public String setBreed(String breed) {
+        return this.breed = breed;
     }
 
     @Override
