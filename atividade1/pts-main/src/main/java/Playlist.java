@@ -3,28 +3,35 @@ import java.util.List;
 
 public class Playlist {
 
-    private String nome;
-    private List<String> lista1;
+    private String name;
+    private List<String> list;
 
-    public Playlist(String nome){
-        this.nome = nome;
-        this.lista1 = new ArrayList<>();
+    public Playlist(String name){
+        this.name = name;
+        this.list = new ArrayList<>();
     }
 
-    public int tamanho(){
-        return lista1.size();
+    public String getName() {
+        return name;
     }
 
-    public void adicionar(String musica){
+    public String setName(String name) {
+        return this.name = name;
+    }
 
-        //Se adicionarmos a mesma música, um erro será exibido.
-        if (this.lista1.contains(musica)) {
-            throw new IllegalArgumentException("Essa música já foi adicionada!");
+    public int size(){
+        return list.size();
+    }
+
+    public void add(String song){
+
+        if (this.list.contains(song)) {
+            throw new IllegalArgumentException("This song was already added.");
         }
-        lista1.add(musica);
+        list.add(song);
     }
 
-    public void remover(String musica){
-        lista1.remove(musica);
+    public void remove(String song){
+        list.remove(song);
     }
 }

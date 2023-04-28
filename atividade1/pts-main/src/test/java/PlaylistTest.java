@@ -1,34 +1,47 @@
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class PlaylistTest {
 
     @Test
-    public void myTest(){
-        Playlist playlist = new Playlist("test1");
-        int aux = playlist.tamanho();
+    public void testCreatePlaylist(){
+        Playlist playlist = new Playlist("pop songs");
+        int aux = playlist.size();
         assertEquals(0, aux);
     }
 
     @Test
-    public void inserirMusica() {
-        Playlist playlist = new Playlist("test2");
-        playlist.adicionar("Save me - BTS");
-
-        //Se adicionarmos a mesma música, um erro será exibido.
-        //playlist.adicionar("Save me - BTS");
-
-        int aux = playlist.tamanho();
+    public void testAddSong() {
+        Playlist playlist = new Playlist("pop songs");
+        playlist.add("Save me");
+        int aux = playlist.size();
         assertEquals(1, aux);
     }
 
     @Test
-    public void removerMusica(){
-        Playlist playlist = new Playlist("test3");
-        String musica = "Save me - BTS";
-        playlist.remover(musica);
-        int aux = playlist.tamanho();
+    public void testRemoveSong(){
+        Playlist playlist = new Playlist("pop songs");
+        String song = "Save me";
+        playlist.remove(song);
+        int aux = playlist.size();
         assertEquals(0, aux);
+    }
+
+    @Test
+    public void testGetName(){
+        Playlist playlist = new Playlist("pop songs");
+        String playlistName = playlist.getName();
+        assertEquals("pop songs", playlistName);
+    }
+
+    @Test
+    public void testSetName(){
+        Playlist playlist = new Playlist("pop songs");
+        String playlistName = playlist.setName("pop songs br");
+        assertEquals("pop songs br", playlistName);
     }
 
 }
